@@ -14,13 +14,4 @@ export default defineConfig({
   esbuild: {
     drop: ["console", "debugger"],
   },
-  build: {
-    css: {
-      loaders: {
-        scss: {
-          implementation: require("sass"),
-        },
-      },
-    },
-  },
 });
