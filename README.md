@@ -2,6 +2,20 @@
 
 This template should help get you started developing with Vue 3 in Vite.
 
+## What feature included
+- Vite
+- Vue 3
+- Pinia
+- PostCSS (Nesting + autoprefixer)
+- Eslint
+- oh-vue-icon
+- vue-a11y
+- vue-gtag
+- vue-i18n
+
+## node version
+v18.14
+
 ## Recommended IDE Setup
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
