@@ -28,4 +28,7 @@ export default defineConfig({
   esbuild: {
     drop: ["console", "debugger"],
   },
+  optimizeDeps: {
+    exclude: ["oh-vue-icons/icons"]
+  }
 });
