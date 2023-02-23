@@ -4,10 +4,8 @@ module.exports = {
     node: true,
     es6: true
   },
-  "plugins": ["vuejs-accessibility"],
   "extends": [
     "plugin:vue/vue3-essential",
-    "plugin:vuejs-accessibility/recommended",
     "eslint:recommended",
   ],
   "parserOptions": {
@@ -62,28 +60,5 @@ module.exports = {
     "switch-colon-spacing": "error",
     "yoda": "error",
     "vue/multi-word-component-names": "warn",
-
-    // vue-a11y
-    "vuejs-accessibility/alt-text": "warn",
-    "vuejs-accessibility/anchor-has-content": "warn",
-    "vuejs-accessibility/aria-props": "warn",
-    "vuejs-accessibility/aria-role": "warn",
-    "vuejs-accessibility/aria-unsupported-elements": "warn",
-    "vuejs-accessibility/click-events-have-key-events": "warn",
-    "vuejs-accessibility/form-control-has-label": "warn",
-    "vuejs-accessibility/heading-has-content": "warn",
-    "vuejs-accessibility/iframe-has-title": "warn",
-    "vuejs-accessibility/interactive-supports-focus": "warn",
-    "vuejs-accessibility/label-has-for": "warn",
-    "vuejs-accessibility/media-has-caption": "warn",
-    "vuejs-accessibility/mouse-events-have-key-events": "warn",
-    "vuejs-accessibility/no-access-key": "warn",
-    "vuejs-accessibility/no-autofocus": "warn",
-    "vuejs-accessibility/no-distracting-elements": "warn",
-    "vuejs-accessibility/no-onchange": "warn",
-    "vuejs-accessibility/no-redundant-roles": "warn",
-    "vuejs-accessibility/no-static-element-interactions": "warn",
-    "vuejs-accessibility/role-has-required-aria-props": "warn",
-    "vuejs-accessibility/tabindex-no-positive": "warn"
   }
 };
