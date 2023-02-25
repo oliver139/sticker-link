@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+::selection {
+  background: rgba(230 151 5 / 50%);
+}
+
+html, body {
+  color: var(--txt-color);
+  height: 100%;
+}
+
+html {
+  font-size: 16px;
+  font-weight: normal;
+  font-family: "Manrope", Helvetica, Arial, sans-serif;
+  background: var(--bg-color);
+  overflow: auto;
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-height, 6.5rem);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-block: 0 1rem;
+}
+
+a {
+  text-decoration: none;
+  transition: color .3s ease;
+  &:hover {
+    color: var(--color-theme2);
+  }
+}
