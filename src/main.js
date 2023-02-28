@@ -4,6 +4,9 @@ import { createApp } from "vue";
 // Router
 import router from "./router";
 
+// Pinia
+import pinia from "./stores";
+
 // icons
 import OhVueIcon from "./utils/iconImport";
 
@@ -17,5 +20,6 @@ import "@/assets/css/main.css";
 
 app
   .use(router)
+  .use(pinia)
   .component("v-icon", OhVueIcon)
   .mount("#app");
