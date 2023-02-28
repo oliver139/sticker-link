@@ -17,5 +17,19 @@ export default defineConfig({
   },
   optimizeDeps: {
     exclude: ["oh-vue-icons/icons"]
-  }
+  },
+  // build: {
+  //   rollupOptions: {
+  //     output: {
+  //       manualChunks: {
+  //         "capoo": [
+  //           "./src/views/Capoo.vue",
+  //         ],
+  //         "cinnamoroll": [
+  //           "./src/views/Cinnamoroll.vue",
+  //         ],
+  //       },
+  //     },
+  //   },
+  // },
 });

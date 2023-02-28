@@ -59,6 +59,6 @@ module.exports = {
     "spaced-comment": "error",
     "switch-colon-spacing": "error",
     "yoda": "error",
-    "vue/multi-word-component-names": "warn",
+    "vue/multi-word-component-names": "off",
   }
 };

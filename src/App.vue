@@ -1,10 +1,13 @@
 <template>
   <div>
-    Hello世界
+    <Navbar />
+    <hr />
+    <router-view />
   </div>
 </template>
 
 <script setup>
+import Navbar from "./components/Navbar.vue";
 
 </script>
 
