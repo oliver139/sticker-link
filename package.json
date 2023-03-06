@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "oh-vue-icons": "^1.0.0-rc3",
-    "pinia": "^2.0.32",
     "vue": "^3.2.45",
     "vue-router": "^4.1.6"
   },
