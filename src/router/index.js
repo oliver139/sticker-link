@@ -8,12 +8,18 @@ const routes = [
   {
     path: "/cinnamoroll",
     name: "cinnamoroll",
-    component: () => import("../views/Cinnamoroll.vue")
+    component: () => import("../views/LinkList.vue"),
+    meta: {
+      navName: "Cinnamoroll"
+    }
   },
   {
     path: "/capoo",
     name: "capoo",
-    component: () => import("../views/Capoo.vue")
+    component: () => import("../views/LinkList.vue"),
+    meta: {
+      navName: "Capoo"
+    }
   },
   {
     path: "/:pathMatch(.*)*",
