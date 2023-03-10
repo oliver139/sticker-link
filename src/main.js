@@ -12,7 +12,8 @@ import App from "./App.vue";
 const app = createApp(App);
 
 // CSS
-import "@/assets/css/reset.css";
+import "normalize.css";
+import "@/assets/css/variable.css";
 import "@/assets/css/main.css";
 
 app
