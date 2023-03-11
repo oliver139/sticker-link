@@ -172,7 +172,7 @@ export default new Map([
   ["capoo", {
     title: "咖波",
     color: new Map([
-      ["normal", "#95d1f1"],
+      ["normal", "#85caef"],
       ["light", "#e0f1fb"]
     ]),
     bgPos: "center bottom",
