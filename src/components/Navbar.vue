@@ -1,10 +1,10 @@
 <template>
   <nav class="navbar">
     <ul class="link-list">
-      <template v-for="link in links" :key="link.name">
-        <li v-if="!link.redirect">
-          <router-link :to="link.path">
-            {{ link.meta.navName }}
+      <template v-for="[key, value] in links" :key="key">
+        <li>
+          <router-link :to="{ name: key }">
+            {{ value.title }}
           </router-link>
         </li>
       </template>
@@ -13,11 +13,11 @@
 </template>
 
 <script setup>
-import { computed } from "vue";
-import { useRouter } from "vue-router";
+import { defineProps } from "vue";
 
-const links = computed(() => useRouter().getRoutes());
-console.log(links.value);
+const props = defineProps({
+  links: Map,
+});
 </script>
 
 <style lang="postcss" scoped>

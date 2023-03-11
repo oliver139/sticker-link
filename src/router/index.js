@@ -9,17 +9,36 @@ const routes = [
     path: "/cinnamoroll",
     name: "cinnamoroll",
     component: () => import("../views/LinkList.vue"),
-    meta: {
-      navName: "Cinnamoroll"
-    }
   },
   {
     path: "/capoo",
     name: "capoo",
     component: () => import("../views/LinkList.vue"),
-    meta: {
-      navName: "Capoo"
-    }
+  },
+  {
+    path: "/pop_team",
+    name: "pop_team",
+    component: () => import("../views/LinkList.vue"),
+  },
+  {
+    path: "/dtto_friends",
+    name: "dtto_friends",
+    component: () => import("../views/LinkList.vue"),
+  },
+  {
+    path: "/pooh",
+    name: "pooh",
+    component: () => import("../views/LinkList.vue"),
+  },
+  {
+    path: "/milk_cat",
+    name: "milk_cat",
+    component: () => import("../views/LinkList.vue"),
+  },
+  {
+    path: "/sumikko",
+    name: "sumikko",
+    component: () => import("../views/LinkList.vue"),
   },
   {
     path: "/:pathMatch(.*)*",

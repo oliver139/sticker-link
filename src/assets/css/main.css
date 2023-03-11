@@ -35,3 +35,9 @@ a {
   text-decoration: none;
   transition: color .3s ease;
 }
+
+img, svg, .ov-icon {
+  display: block;
+  max-width: 100%;
+  object-fit: contain;
+}
