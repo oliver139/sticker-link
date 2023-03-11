@@ -1,5 +1,5 @@
-export default {
-  pop_team: {
+export default new Map([
+  ["pop_team", {
     title: "Pop子",
     bgPos: "center center",
     links: [
@@ -16,8 +16,8 @@ export default {
         href: "https://whatsticker.online/p/6419385MpAAbc/HK/zh"
       },
     ]
-  },
-  cinnamoroll: {
+  }],
+  ["cinnamoroll", {
     title: "仙拿魔奴",
     bgPos: "right bottom",
     links: [
@@ -78,8 +78,8 @@ export default {
         href: "https://whatsticker.online/p/6363156CG4qn7/HK/zh"
       },
     ]
-  },
-  dtto_friends: {
+  }],
+  ["dtto_friends", {
     title: "dtto friends",
     bgPos: "center center",
     link: [
@@ -108,8 +108,8 @@ export default {
         href: "https://whatsticker.online/p/640495iFJhPzk/HK/zh"
       },
     ]
-  },
-  pooh: {
+  }],
+  ["pooh", {
     title: "Pooh",
     bgPos: "center center",
     link: [
@@ -126,8 +126,8 @@ export default {
         href: "https://whatsticker.online/p/592095lh2dPru/HK/zh"
       },
     ]
-  },
-  milk_cat: {
+  }],
+  ["milk_cat", {
     title: "奶泡貓",
     bgPos: "center center",
     link: [
@@ -148,8 +148,8 @@ export default {
         href: "https://whatsticker.online/p/5345943pMcDSF/HK/zh"
       },
     ]
-  },
-  capoo: {
+  }],
+  ["capoo", {
     title: "咖波",
     bgPos: "center bottom",
     link: [
@@ -318,8 +318,8 @@ export default {
         href: "https://whatsticker.online/p/502863DjrRSBR/HK/zh"
       },
     ]
-  },
-  sumikko: {
+  }],
+  ["sumikko", {
     title: "角落生物",
     bgPos: "center center",
     link: [
@@ -376,5 +376,5 @@ export default {
         href: "https://whatsticker.online/p/512726gBe9I9j/HK/zh"
       },
     ]
-  }
-};
+  }],
+]);
