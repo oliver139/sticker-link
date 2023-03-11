@@ -1,7 +1,11 @@
 <template>
   <div
     id="app-wrapper"
-    :style="appStyle"
+    :style="{
+      '--bg-img': `url('${currentView.background}')`,
+      '--bg-color': white,
+      '--bg-pos': currentView.bgPos
+    }"
   >
     <Navbar />
     <header class="list-logo">
@@ -14,58 +18,31 @@
 </template>
 
 <script setup>
-import { computed } from "vue";
+import { ref, computed } from "vue";
 import { useRoute } from "vue-router";
-import viewData from "./data/viewData";
+import data from "./data/data";
 import Navbar from "./components/Navbar.vue";
 
 const route = useRoute();
 
 // Get view setting
 const currentView = computed(() => {
-  const imageUrl = new URL(`/src/assets/img/${route.name}/logo.png`, import.meta.url).pathname;
   return {
     name: route.name,
-    logo: imageUrl,
-    background: viewData[route.name]?.background,
+    logo: `/src/assets/img/${route.name}/logo.webp`,
+    background: `/src/assets/img/${route.name}/background.webp`,
+    bgPos: data[route.name].bgPos
   };
 });
-// background
-const appStyle = computed(() => {
-  let styles = {};
-  console.log(currentView.value);
-  switch (currentView.value.background?.type) {
-    case "image":
-      styles = {
-        "--bg-img": `url(${new URL(`/src/assets/img/${route.name}/background.jpg`, import.meta.url).pathname})`
-      };
-      break;
-
-    case "color":
-      styles = {
-        "--bg-color": currentView.value.background?.value
-      };
-      break;
-
-    default:
-      styles = {
-        "--bg-color": "black"
-      };
-      break;
-  }
-  console.log(styles);
-  return styles;
-});
-
 </script>
 
 <style lang="postcss" scoped>
-
 #app-wrapper {
-  background-color: var(--bg-color);
+  background-color: var(--bg-color, white);
   background-image: var(--bg-img);
   background-repeat: no-repeat;
-  background-position: right bottom;
+  background-position: var(--bg-pos, center center);
   background-size: cover;
+  overflow: auto;
 }
 </style>
