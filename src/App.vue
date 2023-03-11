@@ -3,11 +3,30 @@
     id="app-wrapper"
     :style="{
       '--bg-img': `url('${currentView.background}')`,
-      '--bg-color': 'white',
-      '--bg-pos': currentView.bgPos
+      '--bg-pos': currentView.bgPos,
+      '--theme-normal': currentView.color?.get('normal'),
+      '--theme-light': currentView.color?.get('light'),
     }"
   >
-    <Navbar :links="data" />
+    <aside
+      :class="[
+        'navbar-container',
+        { 'expand': navExpand }
+      ]"
+    >
+      <button
+        type="button"
+        class="nav-toggler"
+        @click="navToggle"
+      >
+        <v-icon name="hi-chevron-right" class="toggler-icon" />
+        <span>Navigation</span>
+      </button>
+      <Navbar
+        :links="data"
+        @linkClicked="navExpand = false"
+      />
+    </aside>
     <Container>
       <header class="list-logo">
         <img :src="currentView.logo" :alt="currentView.name">
@@ -20,7 +39,7 @@
 </template>
 
 <script setup>
-import { computed } from "vue";
+import { ref, computed } from "vue";
 import { useRoute } from "vue-router";
 import data from "./data/data";
 import Navbar from "./components/Navbar.vue";
@@ -28,13 +47,21 @@ import Container from "./components/Container.vue";
 
 const route = useRoute();
 
+// Navbar
+const navExpand = ref(false);
+const navToggle = () => {
+  navExpand.value = !navExpand.value;
+};
+
 // Get view setting
 const currentView = computed(() => {
+  const view = data.get(route.name);
   return {
     name: route.name,
     logo: `/src/assets/img/${route.name}/logo.webp`,
+    color: view?.color,
     background: `/src/assets/img/${route.name}/background.webp`,
-    bgPos: data.get(route.name)?.bgPos
+    bgPos: view?.bgPos
   };
 });
 </script>
@@ -58,6 +85,41 @@ const currentView = computed(() => {
     height: 100%;
     background: rgb(255 255 255 / .5);
     z-index: -10;
+    pointer-events: none;
+  }
+}
+.navbar-container {
+  position: fixed;
+  left: 0;
+  bottom: 3rem;
+  background: #fff;
+  border-top-right-radius: .5rem;
+  padding: 1.5rem 2rem;
+  transform: translateX(-100%);
+  transition: transform .3s ease;
+  isolation: isolate;
+  .nav-toggler {
+    position: absolute;
+    left: 100%;
+    bottom: 0;
+    padding: .75rem .5rem;
+    border-radius: 0 .5rem .5rem 0;
+    transition: background .3s ease, color .3s ease;
+    .toggler-icon {
+      margin-bottom: 0.25rem;
+      transition: transform .3s ease;
+    }
+    > span {
+      writing-mode: vertical-rl;
+    }
+  }
+  &.expand {
+    transform: translateX(0);
+    .nav-toggler {
+      .toggler-icon {
+        transform: scaleX(-1);
+      }
+    }
   }
 }
 </style>

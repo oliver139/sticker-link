@@ -1,8 +1,12 @@
 export default new Map([
   ["pop_team", {
     title: "Pop子",
+    color: new Map([
+      ["normal", "#1a429d"],
+      ["light", "#e9effc"]
+    ]),
     bgPos: "center center",
-    links: [
+    links: new Set([
       {
         text: "愛番工力量 <1>",
         href: "https://whatsticker.online/p/641939MbFA5ly/HK/zh"
@@ -15,12 +19,16 @@ export default new Map([
         text: "不愛番工力量",
         href: "https://whatsticker.online/p/6419385MpAAbc/HK/zh"
       },
-    ]
+    ])
   }],
   ["cinnamoroll", {
     title: "仙拿魔奴",
+    color: new Map([
+      ["normal", "#9bc4e9"],
+      ["light", "#eaf3fb"]
+    ]),
     bgPos: "right bottom",
-    links: [
+    links: new Set([
       {
         text: "仙拿魔奴 - 激しく伝えるスタンプ",
         href: "https://whatsticker.online/p/656334Yu0E3Dx/HK/zh"
@@ -77,12 +85,16 @@ export default new Map([
         text: "Cinnamoroll: All Expressions <2>",
         href: "https://whatsticker.online/p/6363156CG4qn7/HK/zh"
       },
-    ]
+    ])
   }],
   ["dtto_friends", {
     title: "dtto friends",
+    color: new Map([
+      ["normal", "#f2a93e"],
+      ["light", "#fbe9d0"]
+    ]),
     bgPos: "center center",
-    link: [
+    links: new Set([
       {
         text: "dttofriends 爆可愛初登場！",
         href: "https://whatsticker.online/p/640486kzl33IK/HK/zh"
@@ -107,12 +119,16 @@ export default new Map([
         text: "♡ dttofriends 4 ♡ 迷因梗圖第二彈 Part 2",
         href: "https://whatsticker.online/p/640495iFJhPzk/HK/zh"
       },
-    ]
+    ])
   }],
   ["pooh", {
     title: "Pooh",
+    color: new Map([
+      ["normal", "#edb431"],
+      ["light", "#fbefd0"]
+    ]),
     bgPos: "center center",
-    link: [
+    links: new Set([
       {
         text: "Pooh 1",
         href: "https://whatsticker.online/p/5920938edu8qX/HK/zh"
@@ -125,12 +141,16 @@ export default new Map([
         text: "Pooh 3",
         href: "https://whatsticker.online/p/592095lh2dPru/HK/zh"
       },
-    ]
+    ])
   }],
   ["milk_cat", {
     title: "奶泡貓",
+    color: new Map([
+      ["normal", "#a07340"],
+      ["light", "#f0e6db"]
+    ]),
     bgPos: "center center",
-    link: [
+    links: new Set([
       {
         text: "奶泡貓與咖波1",
         href: "https://whatsticker.online/p/534589nnhvI4u/HK/zh"
@@ -147,12 +167,16 @@ export default new Map([
         text: "奶泡貓咖啡館 開店囉2",
         href: "https://whatsticker.online/p/5345943pMcDSF/HK/zh"
       },
-    ]
+    ])
   }],
   ["capoo", {
     title: "咖波",
+    color: new Map([
+      ["normal", "#95d1f1"],
+      ["light", "#e0f1fb"]
+    ]),
     bgPos: "center bottom",
-    link: [
+    links: new Set([
       {
         text: "貓貓蟲咖波與兔兔-大心動 <1>",
         href: "https://whatsticker.online/p/658894Gj1zpgX/HK/zh"
@@ -317,12 +341,16 @@ export default new Map([
         text: "貓貓蟲咖波-螢幕塞滿滿",
         href: "https://whatsticker.online/p/502863DjrRSBR/HK/zh"
       },
-    ]
+    ])
   }],
   ["sumikko", {
     title: "角落生物",
+    color: new Map([
+      ["normal", "#58422e"],
+      ["light", "#ede5de"]
+    ]),
     bgPos: "center center",
-    link: [
+    links: new Set([
       {
         text: "角落生物靜態1",
         href: "https://whatsticker.online/p/515372DfgUD1J/HK/zh"
@@ -375,6 +403,6 @@ export default new Map([
         text: "角落生物（日常用語篇♪）",
         href: "https://whatsticker.online/p/512726gBe9I9j/HK/zh"
       },
-    ]
+    ])
   }],
 ]);

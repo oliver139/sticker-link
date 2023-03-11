@@ -1,9 +1,9 @@
 <template>
   <nav class="navbar">
-    <ul class="link-list">
-      <template v-for="[key, value] in links" :key="key">
-        <li>
-          <router-link :to="{ name: key }">
+    <ul>
+      <template v-for="([key, value], index) in links" :key="key">
+        <li :class="{ 'active': route.name === key }">
+          <router-link :to="{ name: key }" @click="linkClicked(index)">
             {{ value.title }}
           </router-link>
         </li>
@@ -13,13 +13,34 @@
 </template>
 
 <script setup>
-import { defineProps } from "vue";
+import { defineEmits, defineProps } from "vue";
+import { useRoute } from "vue-router";
 
+const route = useRoute();
+
+const emit = defineEmits(["linkClicked"]);
 const props = defineProps({
   links: Map,
 });
+
+const linkClicked = (index) => {
+  emit("linkClicked", index);
+};
 </script>
 
 <style lang="postcss" scoped>
-
+.navbar {
+  li {
+    + li {
+      margin-top: .625rem;
+    }
+    > a {
+      display: block;
+      &.router-link-active {
+        color: var(--theme-normal);
+        font-weight: 600;
+      }
+    }
+  }
+}
 </style>
