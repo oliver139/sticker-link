@@ -9,6 +9,7 @@
     }"
   >
     <aside
+      ref="navbar"
       :class="[
         'navbar-container',
         { 'expand': navExpand }
@@ -41,6 +42,7 @@
 <script setup>
 import { ref, computed } from "vue";
 import { useRoute } from "vue-router";
+import { useDetectOutsideClick } from "@/utils/functions";
 import data from "./data/data";
 import Navbar from "./components/Navbar.vue";
 import Container from "./components/Container.vue";
@@ -48,10 +50,14 @@ import Container from "./components/Container.vue";
 const route = useRoute();
 
 // Navbar
+const navbar = ref();
 const navExpand = ref(false);
 const navToggle = () => {
   navExpand.value = !navExpand.value;
 };
+useDetectOutsideClick(navbar, () => {
+  navExpand.value = false;
+});
 
 // Get view setting
 const currentView = computed(() => {
