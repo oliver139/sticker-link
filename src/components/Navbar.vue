@@ -32,7 +32,7 @@ const linkClicked = (index) => {
 .navbar {
   li {
     + li {
-      margin-top: .625rem;
+      margin-top: .75rem;
     }
     > a {
       display: block;
