@@ -2,8 +2,8 @@ export default new Map([
   ["pop_team", {
     title: "Pop子",
     color: new Map([
-      ["normal", "#1a429d"],
-      ["light", "#e9effc"]
+      ["normal", "26 66 157"],
+      ["light", "233 239 252"],
     ]),
     bgPos: "center center",
     links: new Set([
@@ -24,8 +24,8 @@ export default new Map([
   ["cinnamoroll", {
     title: "仙拿魔奴",
     color: new Map([
-      ["normal", "#9bc4e9"],
-      ["light", "#eaf3fb"]
+      ["normal", "155 196 233"],
+      ["light", "234 243 251"],
     ]),
     bgPos: "right bottom",
     links: new Set([
@@ -90,8 +90,8 @@ export default new Map([
   ["dtto_friends", {
     title: "dtto friends",
     color: new Map([
-      ["normal", "#f2a93e"],
-      ["light", "#fbe9d0"]
+      ["normal", "242 169 62"],
+      ["light", "251 233 208"],
     ]),
     bgPos: "center center",
     links: new Set([
@@ -124,8 +124,8 @@ export default new Map([
   ["pooh", {
     title: "Pooh",
     color: new Map([
-      ["normal", "#edb431"],
-      ["light", "#fbefd0"]
+      ["normal", "237 180 49"],
+      ["light", "251 239 208"],
     ]),
     bgPos: "center center",
     links: new Set([
@@ -146,8 +146,8 @@ export default new Map([
   ["milk_cat", {
     title: "奶泡貓",
     color: new Map([
-      ["normal", "#a07340"],
-      ["light", "#f0e6db"]
+      ["normal", "160 115 64"],
+      ["light", "240 230 219"],
     ]),
     bgPos: "center center",
     links: new Set([
@@ -172,8 +172,8 @@ export default new Map([
   ["capoo", {
     title: "咖波",
     color: new Map([
-      ["normal", "#85caef"],
-      ["light", "#e0f1fb"]
+      ["normal", "93 188 239"],
+      ["light", "224 241 251"],
     ]),
     bgPos: "center bottom",
     links: new Set([
@@ -346,8 +346,8 @@ export default new Map([
   ["sumikko", {
     title: "角落生物",
     color: new Map([
-      ["normal", "#58422e"],
-      ["light", "#ede5de"]
+      ["normal", "88 66 46"],
+      ["light", "237 229 222"],
     ]),
     bgPos: "center center",
     links: new Set([

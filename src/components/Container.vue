@@ -10,7 +10,6 @@
 </template>
 
 <script setup>
-import { defineProps } from "vue";
 const props = defineProps({
   width: {
     type: String,
@@ -21,7 +20,7 @@ const props = defineProps({
 
 <style lang="postcss" scoped>
 .container {
-  width: var(--container-width, 50rem);
+  width: min(var(--container-width, 50rem), 100%);
   margin: auto;
 }
 </style>

@@ -33,7 +33,7 @@
         <img :src="currentView.logo" :alt="currentView.name">
       </header>
       <main class="list-content">
-        <router-view />
+        <router-view :data="currentView" />
       </main>
     </Container>
   </div>
@@ -64,6 +64,7 @@ const currentView = computed(() => {
   const view = data.get(route.name);
   return {
     name: route.name,
+    title: view?.title,
     logo: `/src/assets/img/${route.name}/logo.webp`,
     color: view?.color,
     background: `/src/assets/img/${route.name}/background.webp`,
@@ -92,6 +93,17 @@ const currentView = computed(() => {
     background: rgb(255 255 255 / .5);
     z-index: -10;
     pointer-events: none;
+  }
+  > .container {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 2rem;
+    .list-logo {
+      width: 15rem;
+      margin-bottom: 1.5rem;
+    }
   }
 }
 .navbar-container {

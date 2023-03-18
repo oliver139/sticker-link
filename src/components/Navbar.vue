@@ -13,7 +13,6 @@
 </template>
 
 <script setup>
-import { defineEmits, defineProps } from "vue";
 import { useRoute } from "vue-router";
 
 const route = useRoute();
@@ -37,7 +36,7 @@ const linkClicked = (index) => {
     > a {
       display: block;
       &.router-link-active {
-        color: var(--theme-normal);
+        color: rgb(var(--theme-normal));
         font-weight: 600;
       }
     }
