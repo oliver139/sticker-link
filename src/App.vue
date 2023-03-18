@@ -65,9 +65,9 @@ const currentView = computed(() => {
   return {
     name: route.name,
     title: view?.title,
-    logo: `/src/assets/img/${route.name}/logo.webp`,
+    logo: new URL(`/src/assets/img/${route.name}/logo.webp`, import.meta.url).pathname,
     color: view?.color,
-    background: `/src/assets/img/${route.name}/background.webp`,
+    background: new URL(`/src/assets/img/${route.name}/background.webp`, import.meta.url).pathname,
     bgPos: view?.bgPos
   };
 });
