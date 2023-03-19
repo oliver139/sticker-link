@@ -40,7 +40,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
+import { ref, reactive, watchEffect } from "vue";
 import { useRoute } from "vue-router";
 import { useDetectOutsideClick } from "@/utils/functions";
 import data from "./data/data";
@@ -59,17 +59,18 @@ useDetectOutsideClick(navbar, () => {
   navExpand.value = false;
 });
 
-// Get view setting
-const currentView = computed(() => {
+// Get view setting and watch it
+const currentView = reactive({});
+watchEffect(() => {
   const view = data.get(route.name);
-  return {
+  Object.assign(currentView, {
     name: route.name,
     title: view?.title,
     logo: new URL(`/src/assets/img/${route.name}/logo.webp`, import.meta.url).pathname,
     color: view?.color,
     background: new URL(`/src/assets/img/${route.name}/background.webp`, import.meta.url).pathname,
-    bgPos: view?.bgPos
-  };
+    bgPos: view?.bgPos,
+  });
 });
 </script>
 
