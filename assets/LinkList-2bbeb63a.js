@@ -1,0 +1,1 @@
+import{_ as e,c as a,t as o,o as s}from"./index-40bb02f8.js";const _={class:"list-title"},c={__name:"LinkList",props:{data:{type:Object,default:()=>({name:"name",title:"title",logo:"logo",color:"#fff",background:"background",bgPos:"center"})}},setup(t){return(n,i)=>(s(),a("h1",_,o(t.data.title),1))}},r=e(c,[["__scopeId","data-v-337aa650"]]);export{r as default};
