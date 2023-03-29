@@ -1,0 +1,24 @@
+.position-y {
+  &-enter {
+    &-from {
+      top: -200%;
+    }
+    &-active {
+      transition: top var(--position-y-time, .75s) ease-out;
+    }
+    &-to {
+      top: 0;
+    }
+  }
+  &-leave {
+    &-from {
+      top: 0;
+    }
+    &-active {
+      transition: top var(--position-y-time, .75s) ease-out;
+    }
+    &-to {
+      top: -200%;
+    }
+  }
+}

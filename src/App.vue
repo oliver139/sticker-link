@@ -25,29 +25,38 @@
       </button>
       <Navbar
         :links="data"
-        @linkClicked="navExpand = false"
+        @linkClicked="navLinkClicked"
       />
     </aside>
     <Container>
       <header class="list-logo">
-        <img :src="currentView.logo" :alt="currentView.name">
+        <img :src="currentView.logo" :alt="currentView.name" @click="coverContent = !coverContent">
       </header>
       <main class="list-content">
         <router-view :data="currentView" />
       </main>
     </Container>
+
+    <Transition
+      name="position-y"
+      @after-enter="changeContent"
+    >
+      <div v-show="coverContent" class="fade-cover" />
+    </Transition>
+    <div class="solid-cover" :style="showSolidCover ? 'visibility: visible' : null"/>
   </div>
 </template>
 
 <script setup>
 import { ref, computed } from "vue";
-import { useRoute } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
 import { useDetectOutsideClick } from "@/utils/functions";
 import data from "./data/data";
 import Navbar from "./components/Navbar.vue";
 import Container from "./components/Container.vue";
 
 const route = useRoute();
+const router = useRouter();
 
 // Navbar
 const navbar = ref();
@@ -58,6 +67,26 @@ const navToggle = () => {
 useDetectOutsideClick(navbar, () => {
   navExpand.value = false;
 });
+// Navbar click handle
+const target = ref("");
+const coverContent = ref(false);
+const showSolidCover = ref(false);
+const navLinkClicked = group => {
+  console.log(group);
+  target.value = group;
+  coverContent.value = true;
+  navExpand.value = false;
+};
+const changeContent = el => {
+  showSolidCover.value = true;
+  router.push({ name: target.value });
+  target.value = "";
+
+  setTimeout(() => {
+    showSolidCover.value = false;
+    coverContent.value = false;
+  }, 500);
+};
 
 // Get view setting
 const currentView = computed(() => {
@@ -139,5 +168,23 @@ const currentView = computed(() => {
       }
     }
   }
+}
+
+.fade-cover, .solid-cover {
+  position: fixed;
+  width: 100%;
+  :where(&) {
+    inset: 0;
+  }
+}
+.fade-cover {
+  height: 200%;
+  background: transparent linear-gradient(to bottom, rgb(var(--theme-normal)) 50%, transparent 100%) no-repeat;
+}
+.solid-cover {
+  height: 100%;
+  background: rgb(var(--theme-normal));
+  transition: background-color .5s ease;
+  visibility: hidden;
 }
 </style>

@@ -14,6 +14,7 @@ const app = createApp(App);
 // CSS
 import "normalize.css";
 import "@/assets/css/variable.css";
+import "@/assets/css/transition.css";
 import "@/assets/css/main.css";
 
 app

@@ -1,11 +1,11 @@
 <template>
   <nav class="navbar">
     <ul>
-      <template v-for="([key, value], index) in links" :key="key">
+      <template v-for="[key, value] in links" :key="key">
         <li :class="{ 'active': route.name === key }">
-          <router-link :to="{ name: key }" @click="linkClicked(index)">
+          <a href="javascript:void(0)" @click="linkClicked(key)">
             {{ value.title }}
-          </router-link>
+          </a>
         </li>
       </template>
     </ul>
@@ -22,8 +22,8 @@ const props = defineProps({
   links: Map,
 });
 
-const linkClicked = (index) => {
-  emit("linkClicked", index);
+const linkClicked = (group) => {
+  emit("linkClicked", group);
 };
 </script>
 
