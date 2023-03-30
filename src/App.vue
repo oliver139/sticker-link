@@ -37,10 +37,7 @@
       </main>
     </Container>
 
-    <Transition
-      name="position-y"
-      @after-enter="changeContent"
-    >
+    <Transition name="position-y" @after-enter="changeContent">
       <div v-show="coverContent" class="fade-cover" />
     </Transition>
     <div class="solid-cover" :style="showSolidCover ? 'visibility: visible' : null"/>
