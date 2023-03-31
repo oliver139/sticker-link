@@ -30,15 +30,15 @@ const linkClicked = (group) => {
 <style lang="postcss" scoped>
 .navbar {
   li {
+    &.active {
+      color: rgb(var(--theme-normal));
+      font-weight: 600;
+    }
     + li {
       margin-top: .75rem;
     }
     > a {
       display: block;
-      &.router-link-active {
-        color: rgb(var(--theme-normal));
-        font-weight: 600;
-      }
     }
   }
 }

@@ -30,7 +30,7 @@
     </aside>
     <Container>
       <header class="list-logo">
-        <img :src="currentView.logo" :alt="currentView.name" @click="coverContent = !coverContent">
+        <img :src="currentView.logo" :alt="currentView.name" @click="coverContent = !coverContent" @load="imgLoaded = true">
       </header>
       <main class="list-content">
         <router-view :data="currentView" />
@@ -68,11 +68,13 @@ useDetectOutsideClick(navbar, () => {
 const target = ref("");
 const coverContent = ref(false);
 const showSolidCover = ref(false);
+const imgLoaded = ref(true);
 const navLinkClicked = group => {
   console.log(group);
   target.value = group;
   coverContent.value = true;
   navExpand.value = false;
+  imgLoaded.value = false;
 };
 const changeContent = el => {
   showSolidCover.value = true;
@@ -80,9 +82,14 @@ const changeContent = el => {
   target.value = "";
 
   setTimeout(() => {
-    showSolidCover.value = false;
-    coverContent.value = false;
-  }, 500);
+    for (;;) {
+      if (imgLoaded.value) {
+        showSolidCover.value = false;
+        coverContent.value = false;
+        break;
+      }
+    }
+  }, 750);
 };
 
 // Get view setting
@@ -181,7 +188,7 @@ const currentView = computed(() => {
 .solid-cover {
   height: 100%;
   background: rgb(var(--theme-normal));
-  transition: background-color .5s ease;
+  transition: background-color .75s ease;
   visibility: hidden;
 }
 </style>
