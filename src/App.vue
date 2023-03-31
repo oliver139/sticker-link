@@ -9,7 +9,7 @@
     }"
   >
     <aside
-      ref="navbar"
+      ref="navbarAside"
       :class="[
         'navbar-container',
         { 'expand': navExpand }
@@ -56,12 +56,12 @@ const route = useRoute();
 const router = useRouter();
 
 // Navbar
-const navbar = ref();
+const navbarAside = ref();
 const navExpand = ref(false);
 const navToggle = () => {
   navExpand.value = !navExpand.value;
 };
-useDetectOutsideClick(navbar, () => {
+useDetectOutsideClick(navbarAside, () => {
   navExpand.value = false;
 });
 // Navbar click handle

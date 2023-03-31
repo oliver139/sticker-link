@@ -3,7 +3,12 @@ import { onBeforeUnmount, onMounted } from "vue";
 export function useDetectOutsideClick(component, callback) {
   if (!component) return;
   const listener = event => {
-    if (event.target !== component.value && event.composedPath().includes(component.value)) {
+    console.log(event);
+    console.log(component);
+    console.log(component.value);
+    console.log(event.target !== component.value);
+    console.log(event.composedPath());
+    if (event.composedPath().includes(component.value)) {
       return;
     }
     if (typeof callback === "function") {
