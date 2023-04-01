@@ -36,7 +36,7 @@ const listData = computed(() => {
   props.data.links.forEach(link => {
     index++;
     list.add({
-      icon: new URL(`/src/assets/img/${props.data.name}/${props.data.name}${index}.webp`, import.meta.url).pathname,
+      icon: new URL(`/src/assets/img/${props.data.name}/${props.data.name}${index}.webp`, import.meta.url).href,
       text: link.text,
       href: link.href,
     });

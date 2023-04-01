@@ -98,9 +98,9 @@ const currentView = computed(() => {
   return {
     name: route.name,
     title: view?.title,
-    logo: new URL(`/src/assets/img/${route.name}/logo.webp`, import.meta.url).pathname,
+    logo: new URL(`/src/assets/img/${route.name}/logo.webp`, import.meta.url).href,
     color: view?.color,
-    background: new URL(`/src/assets/img/${route.name}/background.webp`, import.meta.url).pathname,
+    background: new URL(`/src/assets/img/${route.name}/background.webp`, import.meta.url).href,
     bgPos: view?.bgPos,
     links: view?.links,
   };
