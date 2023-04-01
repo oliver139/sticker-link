@@ -103,6 +103,11 @@ const listData = computed(() => {
       box-shadow: rgba(8, 49, 112, 0.24) 0px 2px 8px 0px;
       border-radius: 10rem;
       padding: var(--box-padding, 1rem) calc(var(--icon-size, 3rem) + var(--box-padding, 1rem) * 2);
+      transition: all .3s ease;
+      @media screen and (width <= 30em) {
+        text-align: left;
+        padding-right: var(--box-padding, 1rem);
+      }
     }
   }
   .link-icon {
