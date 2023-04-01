@@ -76,7 +76,7 @@ const navLinkClicked = group => {
   navExpand.value = false;
   imgLoaded.value = false;
 };
-const changeContent = el => {
+const changeContent = async el => {
   showSolidCover.value = true;
   router.push({ name: target.value });
   target.value = "";
@@ -89,7 +89,7 @@ const changeContent = el => {
         break;
       }
     }
-  }, 750);
+  }, 1000);
 };
 
 // Get view setting
@@ -188,7 +188,7 @@ const currentView = computed(() => {
 .solid-cover {
   height: 100%;
   background: rgb(var(--theme-normal));
-  transition: background-color .75s ease;
+  transition: background-color .75s ease .25s;
   visibility: hidden;
 }
 </style>
