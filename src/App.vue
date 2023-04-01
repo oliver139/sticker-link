@@ -28,11 +28,11 @@
         @linkClicked="navLinkClicked"
       />
     </aside>
-    <Container>
+    <Container width="55rem">
       <header class="list-logo">
         <img :src="currentView.logo" :alt="currentView.name" @click="coverContent = !coverContent" @load="imgLoaded = true">
       </header>
-      <main class="list-content">
+      <main class="list-body">
         <router-view :data="currentView" />
       </main>
     </Container>
@@ -101,7 +101,8 @@ const currentView = computed(() => {
     logo: new URL(`/src/assets/img/${route.name}/logo.webp`, import.meta.url).pathname,
     color: view?.color,
     background: new URL(`/src/assets/img/${route.name}/background.webp`, import.meta.url).pathname,
-    bgPos: view?.bgPos
+    bgPos: view?.bgPos,
+    links: view?.links,
   };
 });
 </script>
@@ -132,7 +133,7 @@ const currentView = computed(() => {
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    padding: 3rem 2rem;
+    padding: 3rem;
     .list-logo {
       display: flex;
       align-items: center;
@@ -140,6 +141,10 @@ const currentView = computed(() => {
       width: 15rem;
       min-height: 8rem;
       margin-bottom: 1.5rem;
+    }
+    .list-body {
+      text-align: center;
+      width: 100%;
     }
   }
 }
@@ -153,6 +158,7 @@ const currentView = computed(() => {
   transform: translateX(-100%);
   transition: transform .3s ease;
   isolation: isolate;
+  z-index: 1;
   .nav-toggler {
     position: absolute;
     left: 100%;
@@ -181,6 +187,7 @@ const currentView = computed(() => {
 .fade-cover, .solid-cover {
   position: fixed;
   width: 100%;
+  z-index: 2;
   :where(&) {
     inset: 0;
   }
