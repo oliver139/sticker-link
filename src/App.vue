@@ -134,7 +134,11 @@ const currentView = computed(() => {
     align-items: center;
     padding: 3rem 2rem;
     .list-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       width: 15rem;
+      min-height: 8rem;
       margin-bottom: 1.5rem;
     }
   }
