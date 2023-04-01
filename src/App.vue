@@ -1,5 +1,6 @@
 <template>
   <div
+    ref="appWrapper"
     id="app-wrapper"
     :style="{
       '--bg-img': `url('${currentView.background}')`,
@@ -65,6 +66,7 @@ useDetectOutsideClick(navbarAside, () => {
   navExpand.value = false;
 });
 // Navbar click handle
+const appWrapper = ref();
 const target = ref("");
 const coverContent = ref(false);
 const showSolidCover = ref(false);
@@ -79,6 +81,7 @@ const navLinkClicked = group => {
 const changeContent = async el => {
   showSolidCover.value = true;
   router.push({ name: target.value });
+  appWrapper.value.scrollTo(0, 0);
   target.value = "";
 
   setTimeout(() => {
