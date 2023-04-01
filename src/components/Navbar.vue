@@ -23,6 +23,7 @@ const props = defineProps({
 });
 
 const linkClicked = (group) => {
+  if (route.name === group) return;
   emit("linkClicked", group);
 };
 </script>
@@ -30,15 +31,19 @@ const linkClicked = (group) => {
 <style lang="postcss" scoped>
 .navbar {
   li {
+    > a {
+      display: block;
+    }
     &.active {
       color: rgb(var(--theme-normal));
       font-weight: 600;
+      > a {
+        cursor: default;
+        pointer-events: none;
+      }
     }
     + li {
       margin-top: .75rem;
-    }
-    > a {
-      display: block;
     }
   }
 }

@@ -57,6 +57,7 @@ button {
   background: rgb(var(--theme-normal));
   border: none;
   padding: 1rem 2rem;
+  cursor: pointer;
 }
 
 ul {
