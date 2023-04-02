@@ -46,7 +46,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
+import { ref, computed, watch } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { useDetectOutsideClick } from "@/utils/functions";
 import data from "./data/data";
@@ -68,9 +68,9 @@ useDetectOutsideClick(navbarAside, () => {
 // Navbar click handle
 const appWrapper = ref();
 const target = ref("");
-const coverContent = ref(false);
-const showSolidCover = ref(false);
-const imgLoaded = ref(true);
+const coverContent = ref(true);
+const showSolidCover = ref(true);
+const imgLoaded = ref(false);
 const navLinkClicked = group => {
   console.log(group);
   target.value = group;
@@ -83,17 +83,15 @@ const changeContent = async el => {
   router.push({ name: target.value });
   appWrapper.value.scrollTo(0, 0);
   target.value = "";
-
-  setTimeout(() => {
-    for (;;) {
-      if (imgLoaded.value) {
-        showSolidCover.value = false;
-        coverContent.value = false;
-        break;
-      }
-    }
-  }, 1000);
 };
+watch(imgLoaded, isLoaded => {
+  if (isLoaded) {
+    setTimeout(() => {
+      showSolidCover.value = false;
+      coverContent.value = false;
+    }, 1000);
+  }
+});
 
 // Get view setting
 const currentView = computed(() => {
