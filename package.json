@@ -10,6 +10,7 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "@kalimahapps/vue-icons": "^1.4.0",
     "normalize.css": "^8.0.1",
     "oh-vue-icons": "^1.0.0-rc3",
     "vue": "^3.3.4",
@@ -22,6 +23,8 @@
     "postcss-nested": "^6.0.1",
     "postcss-preset-env": "^9.0.0",
     "postcss-scss": "^4.0.6",
+    "unplugin-auto-import": "^0.16.6",
+    "unplugin-vue-components": "^0.25.1",
     "vite": "^4.4.2"
   }
 }

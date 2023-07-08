@@ -8,7 +8,7 @@ This template should help get you started developing with Vue 3 in Vite.
 - Pinia
 - PostCSS (Nesting + autoprefixer)
 - Eslint
-- oh-vue-icon
+- vue-icons
 - vue-a11y
 - vue-gtag
 - vue-i18n

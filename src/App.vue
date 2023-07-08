@@ -21,7 +21,8 @@
         class="nav-toggler"
         @click="navToggle"
       >
-        <v-icon name="hi-chevron-right" class="toggler-icon" />
+        <!-- <v-icon name="hi-chevron-right" class="toggler-icon" /> -->
+        <HiSolidChevronRight class="toggler-icon" />
         <span>Navigation</span>
       </button>
       <Navbar
@@ -47,12 +48,9 @@
 </template>
 
 <script setup>
-import { ref, computed, watch } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { useDetectOutsideClick } from "@/utils/functions";
 import data from "./data/data";
-import Navbar from "./components/Navbar.vue";
-import Container from "./components/Container.vue";
 
 const route = useRoute();
 const router = useRouter();
@@ -208,6 +206,8 @@ const currentView = computed(() => {
     border-radius: 0 .5rem .5rem 0;
     transition: background .3s ease, color .3s ease;
     .toggler-icon {
+      width: 1.5rem;
+      height: 1.5rem;
       margin-bottom: 0.25rem;
       transition: transform .3s ease;
     }
