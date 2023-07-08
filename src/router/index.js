@@ -3,41 +3,41 @@ import { createRouter, createWebHistory } from "vue-router";
 const routes = [
   {
     path: "/",
-    redirect: "cinnamoroll",
+    redirect: "Cinnamoroll",
   },
   {
     path: "/cinnamoroll",
-    name: "cinnamoroll",
+    name: "Cinnamoroll",
     component: () => import("../views/LinkList.vue"),
   },
   {
     path: "/capoo",
-    name: "capoo",
+    name: "Capoo",
     component: () => import("../views/LinkList.vue"),
   },
   {
-    path: "/pop_team",
-    name: "pop_team",
+    path: "/pop-team",
+    name: "PopTeam",
     component: () => import("../views/LinkList.vue"),
   },
   {
-    path: "/dtto_friends",
-    name: "dtto_friends",
+    path: "/dtto-friends",
+    name: "DttoFriends",
     component: () => import("../views/LinkList.vue"),
   },
   {
     path: "/pooh",
-    name: "pooh",
+    name: "Pooh",
     component: () => import("../views/LinkList.vue"),
   },
   {
-    path: "/milk_cat",
-    name: "milk_cat",
+    path: "/milk-cat",
+    name: "MilkCat",
     component: () => import("../views/LinkList.vue"),
   },
   {
     path: "/sumikko",
-    name: "sumikko",
+    name: "Sumikko",
     component: () => import("../views/LinkList.vue"),
   },
   {
