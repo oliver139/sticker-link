@@ -96,6 +96,7 @@ watch(imgLoaded, isLoaded => {
 // Get view setting
 const currentView = computed(() => {
   const view = data.get(route.name);
+  console.debug(route.name, new URL(`/src/assets/img/${route.name}/logo.webp`, import.meta.url).href, view);
   return {
     name: route.name,
     title: view?.title,
