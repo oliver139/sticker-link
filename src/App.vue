@@ -100,9 +100,9 @@ const currentView = computed(() => {
   return {
     name: route.name,
     title: view?.title,
-    logo: `/img/${route.name}/logo.webp`,
+    logo: `${import.meta.env.BASE_URL}/img/${route.name}/logo.webp`,
     color: view?.color,
-    background: `/img/${route.name}/background.webp`,
+    background: `${import.meta.env.BASE_URL}/img/${route.name}/background.webp`,
     bgPos: view?.bgPos,
     links: view?.links,
   };
