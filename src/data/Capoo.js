@@ -163,4 +163,12 @@ export default new Set([
     text: "貓貓蟲咖波-螢幕塞滿滿",
     href: "https://whatsticker.online/p/502863DjrRSBR/HK/zh"
   },
+  {
+    text: "貓貓蟲-咖波 可愛大暴走",
+    href: "https://whatsticker.online/p/682923vUqoOGn/HK/zh"
+  },
+  {
+    text: "貓貓蟲咖波與兔兔 - 啾咪",
+    href: "https://whatsticker.online/p/682924pM6K3Z8/HK/zh"
+  },
 ]);

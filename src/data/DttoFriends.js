@@ -23,4 +23,24 @@ export default new Set([
     text: "♡ dttofriends 4 ♡ 迷因梗圖第二彈 Part 2",
     href: "https://whatsticker.online/p/640495iFJhPzk/HK/zh"
   },
+  {
+    text: "dtto friends 校園戀愛篇",
+    href: "https://whatsticker.online/p/6828930cClK5L/HK/zh"
+  },
+  {
+    text: "dtto friends 表情貼 Dinu <1>",
+    href: "https://whatsticker.online/p/682919SMvFJsn/HK/zh"
+  },
+  {
+    text: "dtto friends 表情貼 Dinu <2>",
+    href: "https://whatsticker.online/p/682920r3JqmqY/HK/zh"
+  },
+  {
+    text: "dtto friends 表情貼 Hoya <1>",
+    href: "https://whatsticker.online/p/6829212Pcccnb/HK/zh"
+  },
+  {
+    text: "dtto friends 表情貼 Hoya <2>",
+    href: "https://whatsticker.online/p/6829220jEVQD3/HK/zh"
+  },
 ]);
