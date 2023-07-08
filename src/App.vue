@@ -34,6 +34,7 @@
         <img :src="currentView.logo" :alt="currentView.name" @click="coverContent = !coverContent" @load="imgLoaded = true">
       </header>
       <main class="list-body">
+        <h1 class="list-title">{{ currentView.title }}</h1>
         <router-view :data="currentView" />
       </main>
     </Container>
@@ -78,7 +79,7 @@ const navLinkClicked = group => {
   navExpand.value = false;
   imgLoaded.value = false;
 };
-const changeContent = async el => {
+const changeContent = () => {
   showSolidCover.value = true;
   router.push({ name: target.value });
   appWrapper.value.scrollTo(0, 0);
@@ -98,6 +99,7 @@ const currentView = computed(() => {
   const view = data.get(route.name);
 
   return {
+    id: view.id,
     name: route.name,
     title: view?.title,
     logo: `${import.meta.env.BASE_URL}/img/${route.name}/logo.webp`,
@@ -136,18 +138,55 @@ const currentView = computed(() => {
     justify-content: center;
     align-items: center;
     padding: 3rem;
-    .list-logo {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 15rem;
-      min-height: 8rem;
-      margin-bottom: 1.5rem;
-    }
-    .list-body {
-      text-align: center;
-      width: 100%;
-    }
+  }
+}
+
+.list-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15rem;
+  min-height: 8rem;
+  margin-bottom: 1.5rem;
+}
+.list-body {
+  text-align: center;
+  width: 100%;
+}
+
+.list-title {
+  font-size: 1.5rem;
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+  background: #fff;
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.1) ;
+  border-radius: 1rem 0;
+  padding: .75rem 4rem;
+  overflow: hidden;
+  &::before, &::after {
+    --arrow-size: 1rem;
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    filter: drop-shadow(rgba(0 0 0 / .5) 0px 0px 2px);
+  }
+  &::before {
+    bottom: 0;
+    left: 0;
+    border-top: var(--arrow-size) solid transparent;
+    border-right: var(--arrow-size) solid transparent;
+    border-bottom: var(--arrow-size) solid rgb(var(--theme-normal));
+    border-left: var(--arrow-size) solid rgb(var(--theme-normal));
+  }
+  &::after {
+    top: 0;
+    right: 0;
+    border-top: var(--arrow-size) solid rgb(var(--theme-normal));
+    border-right: var(--arrow-size) solid rgb(var(--theme-normal));
+    border-bottom: var(--arrow-size) solid transparent;
+    border-left: var(--arrow-size) solid transparent;
   }
 }
 .navbar-container {

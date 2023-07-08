@@ -1,5 +1,4 @@
 <template>
-  <h1 class="list-title">{{ data.title }}</h1>
   <div class="list-content">
     <ul class="link-list">
       <li v-for="link in listData" :key="link.href">
@@ -31,12 +30,11 @@ const props = defineProps({
 });
 
 const listData = computed(() => {
-  let index = 0;
   const list = new Set();
   props.data.links.forEach(link => {
-    index++;
     list.add({
-      icon: `${import.meta.env.BASE_URL}img/${props.data.name}/${props.data.name}${index}.webp`,
+      id: link.id,
+      icon: `${import.meta.env.BASE_URL}img/${props.data.name}/${link.id}.webp`,
       text: link.text,
       href: link.href,
     });
@@ -46,41 +44,6 @@ const listData = computed(() => {
 </script>
 
 <style lang="postcss" scoped>
-.list-title {
-  font-size: 1.5rem;
-  display: inline-block;
-  position: relative;
-  max-width: 100%;
-  background: #fff;
-  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.1) ;
-  border-radius: 1rem 0;
-  padding: .75rem 4rem;
-  overflow: hidden;
-  &::before, &::after {
-    --arrow-size: 1rem;
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 0;
-    filter: drop-shadow(rgba(0 0 0 / .5) 0px 0px 2px);
-  }
-  &::before {
-    bottom: 0;
-    left: 0;
-    border-top: var(--arrow-size) solid transparent;
-    border-right: var(--arrow-size) solid transparent;
-    border-bottom: var(--arrow-size) solid rgb(var(--theme-normal));
-    border-left: var(--arrow-size) solid rgb(var(--theme-normal));
-  }
-  &::after {
-    top: 0;
-    right: 0;
-    border-top: var(--arrow-size) solid rgb(var(--theme-normal));
-    border-right: var(--arrow-size) solid rgb(var(--theme-normal));
-    border-bottom: var(--arrow-size) solid transparent;
-    border-left: var(--arrow-size) solid transparent;
-  }
-}
 .link-list {
   --box-padding: 1rem;
   --icon-size: 3rem;
