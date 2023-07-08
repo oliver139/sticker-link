@@ -56,6 +56,8 @@ import Container from "./components/Container.vue";
 const route = useRoute();
 const router = useRouter();
 
+const imgDir = new URL("/src/assets/img/", import.meta.url);
+
 // Navbar
 const navbarAside = ref();
 const navExpand = ref(false);
@@ -96,11 +98,11 @@ watch(imgLoaded, isLoaded => {
 // Get view setting
 const currentView = computed(() => {
   const view = data.get(route.name);
-  console.debug(route.name, new URL(`/src/assets/img/${route.name}/logo.webp`, import.meta.url), view);
+  console.info(imgDir);
   return {
     name: route.name,
     title: view?.title,
-    logo: new URL(`/src/assets/img/${route.name}/logo.webp`, import.meta.url).href,
+    logo: new URL("/src/assets/img/" + route.name + "/logo.webp", import.meta.url).href,
     color: view?.color,
     background: new URL(`/src/assets/img/${route.name}/background.webp`, import.meta.url).href,
     bgPos: view?.bgPos,
