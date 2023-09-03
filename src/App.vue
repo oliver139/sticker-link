@@ -94,13 +94,8 @@ watch(imgLoaded, isLoaded => {
 
 // Get view setting
 const currentView = computed(() => {
-  console.log(`🚀 ~ file: App.vue:98 ~ currentView ~ route:`, route.name);
   const view = data.get(route.name);
-  console.log(`🚀 ~ file: App.vue:99 ~ currentView ~ view:`, view);
-  console.log(`🚀 ~ file: App.vue:99 ~ currentView ~ data:`, data);
-
   return {
-    id: view.id,
     name: route.name,
     title: view?.title,
     logo: `${import.meta.env.BASE_URL}/img/${route.name}/logo.webp`,
