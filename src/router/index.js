@@ -3,7 +3,7 @@ import { createRouter, createWebHistory } from "vue-router";
 const routes = [
   {
     path: "/",
-    redirect: "Cinnamoroll",
+    redirect: "/cinnamoroll",
   },
   {
     path: "/cinnamoroll",
@@ -38,6 +38,11 @@ const routes = [
   {
     path: "/sumikko",
     name: "Sumikko",
+    component: () => import("../views/LinkList.vue"),
+  },
+  {
+    path: "/others",
+    name: "Others",
     component: () => import("../views/LinkList.vue"),
   },
   {

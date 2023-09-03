@@ -5,6 +5,7 @@ import Capoo from "@/data/Capoo";
 import Cinnamoroll from "@/data/Cinnamoroll";
 import Pooh from "@/data/Pooh";
 import Sumikko from "@/data/Sumikko";
+import Others from "@/data/Others";
 
 export default new Map([
   ["PopTeam", {
@@ -69,5 +70,14 @@ export default new Map([
     ]),
     bgPos: "center center",
     links: Sumikko,
+  }],
+  ["Others", {
+    title: "Others",
+    color: new Map([
+      ["normal", "188 145 216"],
+      ["light", "203 175 221"],
+    ]),
+    bgPos: "center center",
+    links: Others,
   }],
 ]);
