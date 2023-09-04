@@ -32,7 +32,11 @@
     </aside>
     <Container width="55rem">
       <header class="list-logo">
-        <img :src="currentView.logo" :alt="currentView.name" @click="coverContent = !coverContent" @load="imgLoaded = true">
+        <img
+          :src="currentView.logo"
+          :alt="currentView.name"
+          @load="imgLoaded = true"
+        >
       </header>
       <main class="list-body">
         <h1 class="list-title">{{ currentView.title }}</h1>
