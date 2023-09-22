@@ -3,9 +3,10 @@ import { fileURLToPath, URL } from "node:url";
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 
-// AutoImport Composition API methods
+// AutoImport Composition API methods// Unplugin Tools
 import AutoImport from "unplugin-auto-import/vite";
-import AutoComponent from "unplugin-vue-components/vite";
+import Components from "unplugin-vue-components/vite";
+import { VueUseComponentsResolver, VueUseDirectiveResolver } from "unplugin-vue-components/resolvers";
 
 // Vue-icons
 import VueIconsResolver from "@kalimahapps/vue-icons/resolver";
@@ -16,20 +17,21 @@ export default defineConfig({
   plugins: [
     vue(),
     AutoImport({
-      imports: ["vue"],
+      imports: [
+        "vue",
+        "vue-router",
+        "@vueuse/core",
+      ],
       vueTemplate: true,
-      // eslintrc: {
-      //   enabled: true,
-      //   filepath: "./.eslintrc-auto-import.json", // Default `./.eslintrc-auto-import.json`
-      //   globalsPropValue: true, // Default `true`, (true | false | 'readonly' | 'readable' | 'writable' | 'writeable')
-      // },
     }),
-    AutoComponent({
+    Components({
       // dirs: ["src/components"], // Specify the folder of auto-import components
       extensions: ["vue"], // Specify the extension of auto-import components
       deep: true,
       resolvers: [
         VueIconsResolver,
+        VueUseComponentsResolver(),
+        VueUseDirectiveResolver(),
       ],
     }),
   ],

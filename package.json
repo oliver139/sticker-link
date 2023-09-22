@@ -11,20 +11,21 @@
   },
   "dependencies": {
     "@kalimahapps/vue-icons": "^1.4.0",
+    "@vueuse/core": "^10.4.1",
     "normalize.css": "^8.0.1",
     "oh-vue-icons": "^1.0.0-rc3",
     "vue": "^3.3.4",
     "vue-router": "^4.2.4"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^4.2.3",
-    "eslint": "^8.46.0",
-    "eslint-plugin-vue": "^9.16.1",
+    "@vitejs/plugin-vue": "^4.3.4",
+    "eslint": "^8.49.0",
+    "eslint-plugin-vue": "^9.17.0",
     "postcss-nested": "^6.0.1",
-    "postcss-preset-env": "^9.1.1",
-    "postcss-scss": "^4.0.6",
+    "postcss-preset-env": "^9.1.4",
+    "postcss-scss": "^4.0.8",
     "unplugin-auto-import": "^0.16.6",
-    "unplugin-vue-components": "^0.25.1",
+    "unplugin-vue-components": "^0.25.2",
     "vite": "^4.4.9"
   }
 }

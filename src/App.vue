@@ -52,7 +52,6 @@
 </template>
 
 <script setup>
-import { useRoute, useRouter } from "vue-router";
 import { useDetectOutsideClick } from "@/utils/functions";
 import data from "./data/data";
 
