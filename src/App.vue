@@ -22,7 +22,7 @@
         @click="navToggle"
       >
         <!-- <v-icon name="hi-chevron-right" class="toggler-icon" /> -->
-        <HiSolidChevronRight class="toggler-icon" />
+        <Icon icon="heroicons:chevron-right-solid" class="toggler-icon"/>
         <span>Navigation</span>
       </button>
       <Navbar

@@ -8,11 +8,8 @@ import AutoImport from "unplugin-auto-import/vite";
 import Components from "unplugin-vue-components/vite";
 import { VueUseComponentsResolver, VueUseDirectiveResolver } from "unplugin-vue-components/resolvers";
 
-// Vue-icons
-import VueIconsResolver from "@kalimahapps/vue-icons/resolver";
-
 // https://vitejs.dev/config/
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
   base: "/sticker-link/",
   plugins: [
     vue(),
@@ -29,7 +26,6 @@ export default defineConfig({
       extensions: ["vue"], // Specify the extension of auto-import components
       deep: true,
       resolvers: [
-        VueIconsResolver,
         VueUseComponentsResolver(),
         VueUseDirectiveResolver(),
       ],
@@ -41,24 +37,7 @@ export default defineConfig({
     }
   },
   esbuild: {
-    pure: ["console.log"],
-    drop: ["debugger"],
+    drop: mode === "production" ? ["debugger"] : [],
+    pure: mode === "production" ? ["console.log", "console.debug"] : [],
   },
-  optimizeDeps: {
-    exclude: ["oh-vue-icons/icons"]
-  },
-  // build: {
-  //   rollupOptions: {
-  //     output: {
-  //       manualChunks: {
-  //         "capoo": [
-  //           "./src/views/Capoo.vue",
-  //         ],
-  //         "cinnamoroll": [
-  //           "./src/views/Cinnamoroll.vue",
-  //         ],
-  //       },
-  //     },
-  //   },
-  // },
-});
+}));
