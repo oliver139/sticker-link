@@ -219,4 +219,14 @@ export default new Set([
     text: "貓貓蟲-咖波 奇怪咖波總動員",
     href: "https://whatsticker.online/p/68737134eZWi2/HK/zh"
   },
+  {
+    id: "Capoo45",
+    text: "貓貓蟲咖波-迷因系列 <1>",
+    href: "https://whatsticker.online/p/702663KMJXlKI/HK/zh"
+  },
+  {
+    id: "Capoo46",
+    text: "貓貓蟲咖波-迷因系列 <2>",
+    href: "https://whatsticker.online/p/702665OKIiL9I/HK/zh"
+  },
 ]);
