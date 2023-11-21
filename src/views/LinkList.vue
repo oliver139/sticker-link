@@ -28,16 +28,16 @@ const props = defineProps({
 });
 
 const listData = computed(() => {
-  const list = new Set();
+  const list = [];
   props.data.links.forEach(link => {
-    list.add({
+    list.push({
       id: link.id,
       icon: `${import.meta.env.BASE_URL}img/${props.data.name}/${link.id}.webp`,
       text: link.text,
       href: link.href,
     });
   });
-  return list;
+  return list.reverse();
 });
 </script>
 
