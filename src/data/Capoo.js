@@ -229,4 +229,14 @@ export default new Set([
     text: "貓貓蟲咖波-迷因系列 <2>",
     href: "https://whatsticker.online/p/702665OKIiL9I/HK/zh"
   },
+  {
+    id: "Capoo47",
+    text: "貓貓蟲咖波-實用表情貼 <1>",
+    href: "https://whatsticker.online/p/7035820FcKBTK/HK/zh"
+  },
+  {
+    id: "Capoo48",
+    text: "貓貓蟲咖波-實用表情貼 <2>",
+    href: "https://whatsticker.online/p/703583yoRjfpg/HK/zh"
+  },
 ]);
