@@ -31,8 +31,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-            # node-version: '20.11'
-            node-version-file: '.npmrc'
+            node-version-file: 'package.json'
 
       # Runs a single command using the runners shell
       - name: install dependencies
