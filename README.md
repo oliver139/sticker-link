@@ -14,7 +14,7 @@ This template should help get you started developing with Vue 3 in Vite.
 - vue-i18n
 
 ## node version
-v18.17.1
+v20.11.0
 
 ## Recommended IDE Setup
 
